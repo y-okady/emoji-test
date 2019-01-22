@@ -1,0 +1,27 @@
+<html>
+<head><meta charset="UTF-8"></head>
+<body>
+<h1>絵文字表示テスト</h1>
+
+<h2>エディタにそのまま入力してHTMLにそのまま出力</h2>
+🍣
+
+<h2>数値文字参照でHTMLに出力</h2>
+&#x1F363;
+
+<h2>JavaScriptの文字列にそのまま入力して出力</h2>
+<script>document.write("🍣");</script>
+
+<h2>ES6のString.fromCodePointで出力</h2>
+<script>document.write(String.fromCodePoint(0x1F363));</script>
+
+<h2>ES6のUnicodeリテラルで出力</h2>
+<script>document.write("\u{1F363}");</script>
+
+<h2>ES5のString.fromCharCodeで出力</h2>
+<script>
+  var cp = 0x1F363 - 0x10000;
+  document.write(String.fromCharCode(0xD800 | (cp >> 10), 0xDC00 | (cp & 0x3FF)));
+</script>
+</body>
+</html>
